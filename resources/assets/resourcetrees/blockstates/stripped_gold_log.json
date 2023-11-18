@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "resourcetrees:block/stripped_gold_log_x"
+    },
+    "axis=y": {
+      "model": "resourcetrees:block/stripped_gold_log_y"
+    },
+    "axis=z": {
+      "model": "resourcetrees:block/stripped_gold_log_z"
+    }
+  }
+}

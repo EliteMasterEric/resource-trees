@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pickhaxe>
+  <mod
+    id="resourcetrees"
+    version="0.1.0"
+    parentPackage="com.elitemastereric.resourcetrees"
+    classPath="./src/"
+    resourcePath="./resources/"
+  />
+
+  <!-- An entry point can be CLIENT, SERVER, or *, defaulting to * (both) -->
+  <mod-entry-point
+    environment="*"
+    value="ResourceTreesMod"
+  />
+
+  <mod-entry-point
+    environment="CLIENT"
+    value="ResourceTreesClientMod"
+  />
+
+  <mod-metadata 
+    name="Resource Trees"
+    description="Adds new trees which have a chance to produce resources."
+  />
+
+  <!-- https://spdx.org/licenses/ -->
+  <mod-license value="All Rights Reserved" />
+</pickhaxe>

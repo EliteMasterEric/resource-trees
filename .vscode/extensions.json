@@ -1,0 +1,6 @@
+{
+    "unwantedRecommendations": [
+        // Disable Lime in this workspace, otherwise completion errors can occur.
+        "openfl.lime-vscode-extension"
+    ]
+}
