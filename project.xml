@@ -19,6 +19,12 @@
     value="ResourceTreesClientMod"
   />
 
+  <mod-data-generator
+    value="ResourceTreesDataGenerator">
+    <loader value="fabric" />
+    <minecraft op="gteq" value="1.20.2" />
+  </mod-data-generator>
+
   <mod-metadata 
     name="Resource Trees"
     description="Adds new trees which have a chance to produce resources."
