@@ -55,19 +55,20 @@ class ModBlocks
   {
     ResourceTreesMod.LOGGER.info("Registering blocks...");
 
-    GOLD_LOG.flammable(5, 5).strippable(GOLD_STRIPPED_LOG);
-    GOLD_WOOD.flammable(5, 5).strippable(GOLD_STRIPPED_WOOD);
-    GOLD_PLANKS.flammable(5, 5);
-    GOLD_STRIPPED_LOG.flammable(5, 5);
-    GOLD_STRIPPED_WOOD.flammable(5, 5);
-
-    GOLD_PLANKS.register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_planks"));
-    GOLD_SAPLING.register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_sapling"));
-    GOLD_LOG.register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_log"));
-    GOLD_STRIPPED_LOG.register(new ResourceLocation(ResourceTreesMod.MOD_ID, "stripped_gold_log"));
-    GOLD_WOOD.register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_wood"));
-    GOLD_STRIPPED_WOOD.register(new ResourceLocation(ResourceTreesMod.MOD_ID, "stripped_gold_wood"));
-    GOLD_LEAVES.register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_leaves"));
+    GOLD_LEAVES.flammable(30, 60)
+      .register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_leaves"));
+    GOLD_LOG.flammable(5, 5).strippable(GOLD_STRIPPED_LOG)
+      .register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_log"));
+    GOLD_PLANKS.flammable(5, 5)
+      .register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_planks"));
+    GOLD_SAPLING
+      .register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_sapling"));
+    GOLD_WOOD.flammable(5, 5).strippable(GOLD_STRIPPED_WOOD)
+      .register(new ResourceLocation(ResourceTreesMod.MOD_ID, "gold_wood"));
+    GOLD_STRIPPED_LOG.flammable(5, 5)
+      .register(new ResourceLocation(ResourceTreesMod.MOD_ID, "stripped_gold_log"));
+    GOLD_STRIPPED_WOOD.flammable(5, 5)
+      .register(new ResourceLocation(ResourceTreesMod.MOD_ID, "stripped_gold_wood"));
   }
 
   /**
