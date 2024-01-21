@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:block/cube_column",
-    "textures": {
-      "end": "resourcetrees:block/gold_log",
-      "side": "resourcetrees:block/gold_log"
-    }
-  }
