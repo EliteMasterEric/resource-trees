@@ -5,7 +5,6 @@ import java.nio.file.Path;
 import java.util.function.Consumer;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.AdvancementType;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.BlockModelGenerators.BlockModelGenerators_TintState;
@@ -22,6 +21,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.core.HolderLookup.HolderLookup_Provider;
 import net.pickhaxe.java.NativeArrayUtil;
 import net.pickhaxe.compat.world.level.block.Block;
+import net.pickhaxe.compat.advancements.Advancement;
 import net.pickhaxe.datagen.DataGenerator;
 import net.pickhaxe.datagen.DataGenerator.PickHaxeItemTagProvider;
 import net.pickhaxe.datagen.DataGenerator.PickHaxeBlockTagProvider;
@@ -52,11 +52,26 @@ class ResourceTreesDataGenerator extends DataGenerator {
 	public override function onGenerateAdvancements(consumer:Consumer<AdvancementHolder>):Void {
 		ResourceTreesMod.LOGGER.info("Generating ResourceTrees advancements...");
 
+		var root:AdvancementHolder = Advancement
+			.builder(new ResourceLocation(ResourceTreesMod.MOD_ID, "root"))
+			.advancement()
+			.icon(new ItemStack(ModItems.GOLD_SAPLING))
+			.title(Component.translatable("advancement.resourcetrees"))
+			.description(Component.translatable("advancement.resourcetrees.desc"))
+			.background(new ResourceLocation("textures/gui/advancements/backgrounds/dirt.png"))
+			.task()
+			.showToast(false)
+			.announceToChat(false)
+			.hidden(false)
+			.save(consumer);
+
+		/*
 		var root:AdvancementHolder = Advancement_Builder.advancement()
 			.display(new ItemStack(ModItems.GOLD_SAPLING), Component.translatable("advancement.resourcetrees"),
-				Component.translatable("advancement.resourcetrees.desc"), new ResourceLocation("textures/gui/advancements/backgrounds/dirt.png"),
+				Component.translatable("advancement.resourcetrees.desc"), 
 				AdvancementType.TASK, false, false, false)
 			.save(consumer, '${ResourceTreesMod.MOD_ID}:root');
+		*/
 	}
 
 	public override function onGenerateBlockLootTables(loot:BlockLootSubProvider):Void {
